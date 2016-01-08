@@ -1,0 +1,20 @@
+.search{
+	@extend .input-group;
+	&__input{
+		@extend .form-control;
+	}
+	&__btn-container{
+		@extend .input-group-btn;
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-primary;
+		font-size: cRem(18);
+		border: cRem(1) solid $gray-lighter;
+		border-left: none;
+		&:hover,&:focus,&:active{
+			border-color: $gray-lighter;
+		}
+
+	}
+}

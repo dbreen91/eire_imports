@@ -1,0 +1,13 @@
+.account-form{
+	&__register{
+		display: none;
+	}
+	&__bottom-text{
+		@extend .text-muted;
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+		margin-top: 5px;
+		margin-bottom: -10px;
+	}
+}

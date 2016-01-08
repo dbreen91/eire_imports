@@ -1,0 +1,10 @@
+.logo--header{
+	@extend .logo;
+	max-width: cRem(140);
+	margin-top: cRem(9);
+	@media(min-width: map-get($grid-breakpoints, sm)){
+		max-width:cRem(152);
+		margin-top: cRem(8);
+	}
+
+}

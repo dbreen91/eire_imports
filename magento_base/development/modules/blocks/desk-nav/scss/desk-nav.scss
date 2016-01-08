@@ -1,0 +1,61 @@
+.desk-nav{
+		list-style:none;
+		display:flex;
+		align-items: center;
+		margin-bottom: 0;
+		padding-left: cRem(10);
+		font-size: $font-size-xs;
+		&__item{		
+			&:hover{
+				background-color: $gray-lightest;
+			}
+			@media(min-width: map-get($grid-breakpoints,lg)){
+
+				border-right: solid cRem(1) $gray-lighter;
+				&:first-child{
+					border-left: solid cRem(1) $gray-lighter;
+				}
+
+			}
+
+			&__heading{
+			cursor:pointer;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: cRem(8) cRem(18) cRem(5) cRem(18);
+
+			}
+			
+		}
+
+		&__dropdown{
+			position: absolute;
+			height: 100px;
+			border-bottom: solid cRem(1) $gray-lighter;
+			background-color: $gray-lightest;
+			width: 100%;
+			top:100%;
+			left: 0;
+			display: none;
+			margin-top: cRem(1);
+			margin-left: cRem(-1);
+			&__container{
+				margin: cRem(10);
+			}
+		}
+	}
+
+
+.desk-nav__item[data-state='active']{
+
+	background-color: $gray-lightest;
+
+}
+
+.desk-nav__item[data-state='active']>div:nth-child(2){
+
+	display: block;
+
+}

@@ -1,0 +1,18 @@
+.button{
+	@extend .btn;
+	@extend .btn-primary;
+	width: 100%;
+    text-transform: uppercase;
+    font-family: sans-bold;
+    font-size: cRem(21);
+    padding: 0;
+    padding-top: 5px;
+    border: none;
+    border-bottom: 3px $orange-dark solid;
+    &:active{
+    	border-bottom: 0;
+ 		margin-top: 3px;
+
+
+    }
+}

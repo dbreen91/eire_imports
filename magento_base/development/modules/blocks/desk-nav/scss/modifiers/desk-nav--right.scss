@@ -1,0 +1,11 @@
+.desk-nav--right{
+	@extend .desk-nav;
+	margin-left: auto;
+	&__item{
+		@extend .desk-nav__item;
+
+		&__p{
+			border-left:0;
+		}
+	}
+}

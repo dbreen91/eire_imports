@@ -1,0 +1,8 @@
+.desk-nav--right__dropdown--minicart{
+	@extend .desk-nav__dropdown;
+	left:auto;
+	width:cRem(380);
+	height: auto;
+	right: 0;
+	border-left: solid cRem(1) $gray-lighter;
+}

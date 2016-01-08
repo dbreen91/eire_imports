@@ -1,0 +1,8 @@
+.desk-nav__item--link{
+	@extend .desk-nav__item;
+	&:active{
+		background-color: $gray-light;
+		color: #fff;
+	}
+}
+

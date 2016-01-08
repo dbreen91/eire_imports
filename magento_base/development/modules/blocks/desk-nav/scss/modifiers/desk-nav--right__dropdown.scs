@@ -1,0 +1,9 @@
+.desk-nav--right__dropdown{
+	@extend .desk-nav__dropdown;
+	left:auto;
+	width:cRem(305);
+	height: auto;
+	right: 0;
+	border-left: solid cRem(1) $gray-lighter;
+	
+}
