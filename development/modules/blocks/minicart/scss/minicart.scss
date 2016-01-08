@@ -1,0 +1,36 @@
+.minicart{
+	&__product{
+	    display: flex;
+	    align-items: center;
+	    border-bottom: solid cRem(1) $gray-light;
+		&__img{
+			height: cRem(60);
+			width: cRem(60);
+		}
+		&__info{
+			display: flex;
+		    flex-direction: column;
+		    max-width: cRem(168);
+		    padding: cRem(5);
+		    font-size: $font-size-tiny;
+		    @media(min-width: map-get($grid-breakpoints, sm)){
+		    	max-width: cRem(226);
+		    }
+		    &__additional{
+		    	@extend .text-muted;
+		    }
+		}
+		&__quantity{
+			padding-left: cRem(12);
+		}
+		&__price{
+			margin-left: auto;
+		}
+	}
+	&__total{
+		display: block;
+    	text-align: right;
+    	font-weight: bold;
+    	margin: cRem(10) 0;
+	}
+}
