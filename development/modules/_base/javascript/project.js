@@ -86,7 +86,6 @@ class DeskNav {
 		//Set up class variables
 		this.doc = pageVariables.doc;
 		this.pageFunctions = pageFunctions;
-		pageFunctions.hideDropdownsEvent = this.hideDropdownsEvent;
 		this.navItemName = '.desk-nav__item';
 		this.navItems = $(this.navItemName);
 		this.navItemHeadings = $('.desk-nav__item__heading');
@@ -106,10 +105,9 @@ class DeskNav {
 		const navItem = $(event.target).closest(this.navItemName),
 		     
 		//Get the current state of the nav item
-		currentState = navItem.attr('data-state');
+		currentState = this.pageFunctions.getState(navItem);
 		//Close all open dropdowns
 		this.hideDropdownsEvent();
-
 		//Check the state of the nav item and change it accordingly
 		if (currentState === 'dormant') {
 			this.pageFunctions.changeState(navItem, 'active');
@@ -143,6 +141,24 @@ class PageFunctions {
 
 	constructor() {}
 
+	getState(element) {
+
+		const currentState = element.attr('data-state');
+
+		return currentState;
+	}
+
+	toggleState(element) {
+
+		const currentState = this.getState(element);
+
+		if (currentState === 'dormant') {
+			this.changeState(element, 'active');
+		} else {
+			this.changeState(element, 'dormant');
+		}
+	}
+
 	changeState(element, state) {
 
 		element.attr('data-state', state);
@@ -154,8 +170,8 @@ class PageFunctions {
 
 	}
 
-	hideDropdownsEvent() {}
 }
+
 class PageState {
 
 	constructor(pageVariables) {
@@ -226,11 +242,6 @@ class PageState {
 		return mobNavVisibile;
 	}
 
-	setHideDropdownEvent(dropDownEvent) {
-
-		this.setHideDropdownEvent = dropDownEvent;
-	}
-
 }
 $(document).ready(function () {
 
@@ -240,31 +251,4 @@ $(document).ready(function () {
 	const pageFunctions = new PageFunctions();
 	const deskNav = new DeskNav(pageVariables, pageFunctions);
 	const accountForm = new AccountForm();
-
-	class pat {
-
-		constructor() {}
-
-		setFunc(func) {
-			this.func = func;
-		}
-
-	}
-
-	class pat2 {
-
-		constructor(p) {
-			p.setFunc(this.func);
-		}
-
-		func() {
-			console.log('pat');
-		}
-
-	}
-
-	var p1 = new pat();
-	var p2 = new pat2(p1);
-
-	p1.func();
 });

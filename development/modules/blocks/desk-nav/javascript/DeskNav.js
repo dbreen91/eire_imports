@@ -4,7 +4,6 @@ class DeskNav{
 		//Set up class variables
 		this.doc = pageVariables.doc;
 		this.pageFunctions = pageFunctions;
-		pageFunctions.hideDropdownsEvent = this.hideDropdownsEvent;
 		this.navItemName = '.desk-nav__item';
 		this.navItems = $(this.navItemName);
 		this.navItemHeadings = $('.desk-nav__item__heading');
@@ -12,6 +11,7 @@ class DeskNav{
 		//Initialize methods
 		this.init();
 	}
+	
 
 	init(){
 		//Add click events
@@ -23,10 +23,9 @@ class DeskNav{
 				//Find the nav item element 
 				const navItem = $(event.target).closest(this.navItemName),
 				//Get the current state of the nav item
-				currentState = navItem.attr('data-state');
+				currentState = this.pageFunctions.getState(navItem);
 				//Close all open dropdowns
 				this.hideDropdownsEvent();
-
 				//Check the state of the nav item and change it accordingly
 				if(currentState === 'dormant'){
 					this.pageFunctions.changeState(navItem,'active');

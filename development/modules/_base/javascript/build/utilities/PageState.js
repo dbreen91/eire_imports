@@ -78,11 +78,7 @@ class PageState {
 		return mobNavVisibile;
 	}
 
-	setHideDropdownEvent(dropDownEvent){
-
-		this.setHideDropdownEvent = dropDownEvent;
-
-	}
+	
 
 
 }
