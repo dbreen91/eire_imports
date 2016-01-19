@@ -292,9 +292,10 @@ th {
     display: none;
   }
 
-  .btn > .caret, .button > .caret, .search__btn > .caret,
+  .btn > .caret, .button > .caret, .button--full-width > .caret, .search__btn > .caret,
   .dropup > .btn > .caret,
   .dropup > .button > .caret,
+  .dropup > .button--full-width > .caret,
   .dropup > .search__btn > .caret {
     border-top-color: #000 !important;
   }
@@ -2563,6 +2564,8 @@ pre code {
   .input-group-sm > .search__btn-container > .form-control-static.btn,
   .input-group-sm > .input-group-btn > .form-control-static.button,
   .input-group-sm > .search__btn-container > .form-control-static.button,
+  .input-group-sm > .input-group-btn > .form-control-static.button--full-width,
+  .input-group-sm > .search__btn-container > .form-control-static.button--full-width,
   .input-group-sm > .input-group-btn > .form-control-static.search__btn,
   .input-group-sm > .search__btn-container > .form-control-static.search__btn, .form-control-static.form-control-lg, .input-group-lg > .form-control-static.form-control, .input-group-lg > .form-control-static.search__input,
   .input-group-lg > .form-control-static.input-group-addon,
@@ -2570,6 +2573,8 @@ pre code {
   .input-group-lg > .search__btn-container > .form-control-static.btn,
   .input-group-lg > .input-group-btn > .form-control-static.button,
   .input-group-lg > .search__btn-container > .form-control-static.button,
+  .input-group-lg > .input-group-btn > .form-control-static.button--full-width,
+  .input-group-lg > .search__btn-container > .form-control-static.button--full-width,
   .input-group-lg > .input-group-btn > .form-control-static.search__btn,
   .input-group-lg > .search__btn-container > .form-control-static.search__btn {
   padding-right: 0;
@@ -2582,6 +2587,8 @@ pre code {
 .input-group-sm > .search__btn-container > .btn,
 .input-group-sm > .input-group-btn > .button,
 .input-group-sm > .search__btn-container > .button,
+.input-group-sm > .input-group-btn > .button--full-width,
+.input-group-sm > .search__btn-container > .button--full-width,
 .input-group-sm > .input-group-btn > .search__btn,
 .input-group-sm > .search__btn-container > .search__btn {
   padding: .275rem .75rem;
@@ -2596,6 +2603,8 @@ pre code {
 .input-group-lg > .search__btn-container > .btn,
 .input-group-lg > .input-group-btn > .button,
 .input-group-lg > .search__btn-container > .button,
+.input-group-lg > .input-group-btn > .button--full-width,
+.input-group-lg > .search__btn-container > .button--full-width,
 .input-group-lg > .input-group-btn > .search__btn,
 .input-group-lg > .search__btn-container > .search__btn {
   padding: .75rem 1.25rem;
@@ -2812,7 +2821,7 @@ input[type="checkbox"] {
   }
 }
 
-.btn, .button, .search__btn {
+.btn, .button, .button--full-width, .search__btn {
   display: inline-block;
   padding: .375rem 1rem;
   font-size: 1rem;
@@ -2830,44 +2839,45 @@ input[type="checkbox"] {
           user-select: none;
   border: .0625rem solid transparent;
 }
-.btn.focus, .focus.button, .focus.search__btn {
+.btn.focus, .focus.button, .focus.button--full-width, .focus.search__btn {
   text-decoration: none;
 }
-.btn:active, .button:active, .search__btn:active, .btn.active, .active.button, .active.search__btn, .btn:focus, .button:focus, .search__btn:focus {
+.btn:active, .button:active, .button--full-width:active, .search__btn:active, .btn.active, .active.button, .active.button--full-width, .active.search__btn, .btn:focus, .button:focus, .button--full-width:focus, .search__btn:focus {
   background-image: none;
   outline: 0;
 }
-.btn.disabled, .disabled.button, .disabled.search__btn, .btn:disabled, .button:disabled, .search__btn:disabled, fieldset[disabled] .btn, fieldset[disabled] .button, fieldset[disabled] .search__btn {
+.btn.disabled, .disabled.button, .disabled.button--full-width, .disabled.search__btn, .btn:disabled, .button:disabled, .button--full-width:disabled, .search__btn:disabled, fieldset[disabled] .btn, fieldset[disabled] .button, fieldset[disabled] .button--full-width, fieldset[disabled] .search__btn {
   cursor: not-allowed;
   opacity: .65;
 }
 
-a.btn.disaabled, a.disaabled.button, a.disaabled.search__btn,
+a.btn.disaabled, a.disaabled.button, a.disaabled.button--full-width, a.disaabled.search__btn,
 fieldset[disabled] a.btn,
 fieldset[disabled] a.button,
+fieldset[disabled] a.button--full-width,
 fieldset[disabled] a.search__btn {
   pointer-events: none;
 }
 
-.btn-primary, .button, .search__btn {
+.btn-primary, .button, .button--full-width, .search__btn {
   color: #fff;
   background-color: #d04603;
   border-color: #6c2401;
 }
-.btn-primary:hover, .button:hover, .search__btn:hover {
+.btn-primary:hover, .button:hover, .button--full-width:hover, .search__btn:hover {
   background-color: #9e3502;
 }
-.btn-primary:active, .button:active, .search__btn:active {
+.btn-primary:active, .button:active, .button--full-width:active, .search__btn:active {
   background-color: #6c2401;
 }
-.btn-primary:active, .button:active, .search__btn:active, .btn-primary.active, .active.button, .active.search__btn, .open > .btn-primary.dropdown-toggle, .open > .dropdown-toggle.button, .open > .dropdown-toggle.search__btn {
+.btn-primary:active, .button:active, .button--full-width:active, .search__btn:active, .btn-primary.active, .active.button, .active.button--full-width, .active.search__btn, .open > .btn-primary.dropdown-toggle, .open > .dropdown-toggle.button, .open > .dropdown-toggle.button--full-width, .open > .dropdown-toggle.search__btn {
   background-image: none;
 }
-.btn-primary.disabled:focus, .disabled.button:focus, .disabled.search__btn:focus, .btn-primary.disabled.focus, .disabled.focus.button, .disabled.focus.search__btn, .btn-primary:disabled:focus, .button:disabled:focus, .search__btn:disabled:focus, .btn-primary:disabled.focus, .button:disabled.focus, .search__btn:disabled.focus, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .button:focus, fieldset[disabled] .search__btn:focus, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .focus.button, fieldset[disabled] .focus.search__btn {
+.btn-primary.disabled:focus, .disabled.button:focus, .disabled.button--full-width:focus, .disabled.search__btn:focus, .btn-primary.disabled.focus, .disabled.focus.button, .disabled.focus.button--full-width, .disabled.focus.search__btn, .btn-primary:disabled:focus, .button:disabled:focus, .button--full-width:disabled:focus, .search__btn:disabled:focus, .btn-primary:disabled.focus, .button:disabled.focus, .button--full-width:disabled.focus, .search__btn:disabled.focus, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .button:focus, fieldset[disabled] .button--full-width:focus, fieldset[disabled] .search__btn:focus, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .focus.button, fieldset[disabled] .focus.button--full-width, fieldset[disabled] .focus.search__btn {
   background-color: #d04603;
   border-color: #6c2401;
 }
-.btn-primary.disabled:hover, .disabled.button:hover, .disabled.search__btn:hover, .btn-primary:disabled:hover, .button:disabled:hover, .search__btn:disabled:hover, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .button:hover, fieldset[disabled] .search__btn:hover {
+.btn-primary.disabled:hover, .disabled.button:hover, .disabled.button--full-width:hover, .disabled.search__btn:hover, .btn-primary:disabled:hover, .button:disabled:hover, .button--full-width:disabled:hover, .search__btn:disabled:hover, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .button:hover, fieldset[disabled] .button--full-width:hover, fieldset[disabled] .search__btn:hover {
   background-color: #d04603;
   border-color: #6c2401;
 }
@@ -2896,13 +2906,13 @@ fieldset[disabled] a.search__btn {
   text-decoration: none;
 }
 
-.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .button, .btn-group-lg > .search__btn {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .button, .btn-group-lg > .button--full-width, .btn-group-lg > .search__btn {
   padding: .75rem 1.25rem;
   font-size: 1.313rem;
   line-height: 1.33333;
 }
 
-.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .button, .btn-group-sm > .search__btn {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .button, .btn-group-sm > .button--full-width, .btn-group-sm > .search__btn {
   padding: .25rem .75rem;
   font-size: .85rem;
   line-height: 1.5;
@@ -3095,38 +3105,45 @@ input[type="button"].btn-block {
   display: inline-block;
   vertical-align: middle;
 }
-.btn-group > .btn, .btn-group > .button, .btn-group > .search__btn,
+.btn-group > .btn, .btn-group > .button, .btn-group > .button--full-width, .btn-group > .search__btn,
   .btn-group-vertical > .btn,
   .btn-group-vertical > .button,
+  .btn-group-vertical > .button--full-width,
   .btn-group-vertical > .search__btn {
   position: relative;
   float: left;
 }
-.btn-group > .btn:focus, .btn-group > .button:focus, .btn-group > .search__btn:focus, .btn-group > .btn:active, .btn-group > .button:active, .btn-group > .search__btn:active, .btn-group > .btn.active, .btn-group > .active.button, .btn-group > .active.search__btn,
+.btn-group > .btn:focus, .btn-group > .button:focus, .btn-group > .button--full-width:focus, .btn-group > .search__btn:focus, .btn-group > .btn:active, .btn-group > .button:active, .btn-group > .button--full-width:active, .btn-group > .search__btn:active, .btn-group > .btn.active, .btn-group > .active.button, .btn-group > .active.button--full-width, .btn-group > .active.search__btn,
     .btn-group-vertical > .btn:focus,
     .btn-group-vertical > .button:focus,
+    .btn-group-vertical > .button--full-width:focus,
     .btn-group-vertical > .search__btn:focus,
     .btn-group-vertical > .btn:active,
     .btn-group-vertical > .button:active,
+    .btn-group-vertical > .button--full-width:active,
     .btn-group-vertical > .search__btn:active,
     .btn-group-vertical > .btn.active,
     .btn-group-vertical > .active.button,
+    .btn-group-vertical > .active.button--full-width,
     .btn-group-vertical > .active.search__btn {
   z-index: 2;
 }
-.btn-group > .btn:hover, .btn-group > .button:hover, .btn-group > .search__btn:hover,
+.btn-group > .btn:hover, .btn-group > .button:hover, .btn-group > .button--full-width:hover, .btn-group > .search__btn:hover,
     .btn-group-vertical > .btn:hover,
     .btn-group-vertical > .button:hover,
+    .btn-group-vertical > .button--full-width:hover,
     .btn-group-vertical > .search__btn:hover {
   z-index: 2;
 }
 
-.btn-group .btn + .btn, .btn-group .button + .btn, .btn-group .search__btn + .btn, .btn-group .btn + .button, .btn-group .button + .button, .btn-group .search__btn + .button, .btn-group .btn + .search__btn, .btn-group .button + .search__btn, .btn-group .search__btn + .search__btn,
+.btn-group .btn + .btn, .btn-group .button + .btn, .btn-group .button--full-width + .btn, .btn-group .search__btn + .btn, .btn-group .btn + .button, .btn-group .button + .button, .btn-group .button--full-width + .button, .btn-group .search__btn + .button, .btn-group .btn + .button--full-width, .btn-group .button + .button--full-width, .btn-group .button--full-width + .button--full-width, .btn-group .search__btn + .button--full-width, .btn-group .btn + .search__btn, .btn-group .button + .search__btn, .btn-group .button--full-width + .search__btn, .btn-group .search__btn + .search__btn,
 .btn-group .btn + .btn-group,
 .btn-group .button + .btn-group,
+.btn-group .button--full-width + .btn-group,
 .btn-group .search__btn + .btn-group,
 .btn-group .btn-group + .btn,
 .btn-group .btn-group + .button,
+.btn-group .btn-group + .button--full-width,
 .btn-group .btn-group + .search__btn,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px;
@@ -3147,26 +3164,26 @@ input[type="button"].btn-block {
   .btn-toolbar .search {
   float: left;
 }
-.btn-toolbar > .btn, .btn-toolbar > .button, .btn-toolbar > .search__btn,
+.btn-toolbar > .btn, .btn-toolbar > .button, .btn-toolbar > .button--full-width, .btn-toolbar > .search__btn,
   .btn-toolbar > .btn-group,
   .btn-toolbar > .input-group,
   .btn-toolbar > .search {
   margin-left: 5px;
 }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .search__btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .button--full-width:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .search__btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
 
-.btn-group > .btn:first-child, .btn-group > .button:first-child, .btn-group > .search__btn:first-child {
+.btn-group > .btn:first-child, .btn-group > .button:first-child, .btn-group > .button--full-width:first-child, .btn-group > .search__btn:first-child {
   margin-left: 0;
 }
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .search__btn:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .button--full-width:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .search__btn:first-child:not(:last-child):not(.dropdown-toggle) {
   border-top-right-radius: 0; 
   border-bottom-right-radius: 0;
 }
 
-.btn-group > .btn:last-child:not(:first-child), .btn-group > .button:last-child:not(:first-child), .btn-group > .search__btn:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .button:last-child:not(:first-child), .btn-group > .button--full-width:last-child:not(:first-child), .btn-group > .search__btn:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-top-left-radius: 0; 
   border-bottom-left-radius: 0;
@@ -3176,17 +3193,17 @@ input[type="button"].btn-block {
   float: left;
 }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button, .btn-group > .btn-group:not(:first-child):not(:last-child) > .search__btn {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button, .btn-group > .btn-group:not(:first-child):not(:last-child) > .button--full-width, .btn-group > .btn-group:not(:first-child):not(:last-child) > .search__btn {
   border-radius: 0;
 }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .button:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .search__btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .button:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .button--full-width:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .search__btn:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-top-right-radius: 0; 
   border-bottom-right-radius: 0;
 }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .button:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .search__btn:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .button:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .button--full-width:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .search__btn:first-child {
   border-top-left-radius: 0; 
   border-bottom-left-radius: 0;
 }
@@ -3196,33 +3213,34 @@ input[type="button"].btn-block {
   outline: 0;
 }
 
-.btn-group > .btn + .dropdown-toggle, .btn-group > .button + .dropdown-toggle, .btn-group > .search__btn + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, .btn-group > .button + .dropdown-toggle, .btn-group > .button--full-width + .dropdown-toggle, .btn-group > .search__btn + .dropdown-toggle {
   padding-right: 8px;
   padding-left: 8px;
 }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > .button + .dropdown-toggle, .btn-group-lg.btn-group > .search__btn + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > .button + .dropdown-toggle, .btn-group-lg.btn-group > .button--full-width + .dropdown-toggle, .btn-group-lg.btn-group > .search__btn + .dropdown-toggle {
   padding-right: 12px;
   padding-left: 12px;
 }
 
-.btn .caret, .button .caret, .search__btn .caret {
+.btn .caret, .button .caret, .button--full-width .caret, .search__btn .caret {
   margin-left: 0;
 }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > .button .caret, .btn-group-lg > .search__btn .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > .button .caret, .btn-group-lg > .button--full-width .caret, .btn-group-lg > .search__btn .caret {
   border-width: .3em .3em 0;
   border-bottom-width: 0;
 }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > .button .caret, .dropup .btn-group-lg > .search__btn .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > .button .caret, .dropup .btn-group-lg > .button--full-width .caret, .dropup .btn-group-lg > .search__btn .caret {
   border-width: 0 .3em .3em;
 }
 
-.btn-group-vertical > .btn, .btn-group-vertical > .button, .btn-group-vertical > .search__btn,
+.btn-group-vertical > .btn, .btn-group-vertical > .button, .btn-group-vertical > .button--full-width, .btn-group-vertical > .search__btn,
 .btn-group-vertical > .btn-group,
 .btn-group-vertical > .btn-group > .btn,
 .btn-group-vertical > .btn-group > .button,
+.btn-group-vertical > .btn-group > .button--full-width,
 .btn-group-vertical > .btn-group > .search__btn {
   display: block;
   float: none;
@@ -3236,59 +3254,64 @@ input[type="button"].btn-block {
 .btn-group-vertical > .btn-group:after {
   clear: both;
 }
-.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .button, .btn-group-vertical > .btn-group > .search__btn {
+.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .button, .btn-group-vertical > .btn-group > .button--full-width, .btn-group-vertical > .btn-group > .search__btn {
   float: none;
 }
-.btn-group-vertical > .btn + .btn, .btn-group-vertical > .button + .btn, .btn-group-vertical > .search__btn + .btn, .btn-group-vertical > .btn + .button, .btn-group-vertical > .button + .button, .btn-group-vertical > .search__btn + .button, .btn-group-vertical > .btn + .search__btn, .btn-group-vertical > .button + .search__btn, .btn-group-vertical > .search__btn + .search__btn,
+.btn-group-vertical > .btn + .btn, .btn-group-vertical > .button + .btn, .btn-group-vertical > .button--full-width + .btn, .btn-group-vertical > .search__btn + .btn, .btn-group-vertical > .btn + .button, .btn-group-vertical > .button + .button, .btn-group-vertical > .button--full-width + .button, .btn-group-vertical > .search__btn + .button, .btn-group-vertical > .btn + .button--full-width, .btn-group-vertical > .button + .button--full-width, .btn-group-vertical > .button--full-width + .button--full-width, .btn-group-vertical > .search__btn + .button--full-width, .btn-group-vertical > .btn + .search__btn, .btn-group-vertical > .button + .search__btn, .btn-group-vertical > .button--full-width + .search__btn, .btn-group-vertical > .search__btn + .search__btn,
 .btn-group-vertical > .btn + .btn-group,
 .btn-group-vertical > .button + .btn-group,
+.btn-group-vertical > .button--full-width + .btn-group,
 .btn-group-vertical > .search__btn + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
 .btn-group-vertical > .btn-group + .button,
+.btn-group-vertical > .btn-group + .button--full-width,
 .btn-group-vertical > .btn-group + .search__btn,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0;
 }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .button:not(:first-child):not(:last-child), .btn-group-vertical > .search__btn:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .button:not(:first-child):not(:last-child), .btn-group-vertical > .button--full-width:not(:first-child):not(:last-child), .btn-group-vertical > .search__btn:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
-.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .button:first-child:not(:last-child), .btn-group-vertical > .search__btn:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .button:first-child:not(:last-child), .btn-group-vertical > .button--full-width:first-child:not(:last-child), .btn-group-vertical > .search__btn:first-child:not(:last-child) {
   border-top-right-radius: .25rem;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .button:last-child:not(:first-child), .btn-group-vertical > .search__btn:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .button:last-child:not(:first-child), .btn-group-vertical > .button--full-width:last-child:not(:first-child), .btn-group-vertical > .search__btn:last-child:not(:first-child) {
   border-top-left-radius: 0; 
   border-top-right-radius: 0;
   border-bottom-left-radius: .25rem;
 }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .search__btn {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .button--full-width, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .search__btn {
   border-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .search__btn:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .button--full-width:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .search__btn:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .search__btn:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .button--full-width:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .search__btn:first-child {
   border-top-left-radius: 0; 
   border-top-right-radius: 0;
 }
 
-[data-toggle="buttons"] > .btn input[type="radio"], [data-toggle="buttons"] > .button input[type="radio"], [data-toggle="buttons"] > .search__btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="radio"], [data-toggle="buttons"] > .button input[type="radio"], [data-toggle="buttons"] > .button--full-width input[type="radio"], [data-toggle="buttons"] > .search__btn input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"],
 [data-toggle="buttons"] > .button input[type="checkbox"],
+[data-toggle="buttons"] > .button--full-width input[type="checkbox"],
 [data-toggle="buttons"] > .search__btn input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .button input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .button--full-width input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .search__btn input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .button input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .button--full-width input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .search__btn input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -3336,6 +3359,8 @@ input[type="button"].btn-block {
   .input-group-sm > .search__btn-container > .input-group-addon.btn,
   .input-group-sm > .input-group-btn > .input-group-addon.button,
   .input-group-sm > .search__btn-container > .input-group-addon.button,
+  .input-group-sm > .input-group-btn > .input-group-addon.button--full-width,
+  .input-group-sm > .search__btn-container > .input-group-addon.button--full-width,
   .input-group-sm > .input-group-btn > .input-group-addon.search__btn,
   .input-group-sm > .search__btn-container > .input-group-addon.search__btn {
   padding: .275rem .75rem;
@@ -3347,6 +3372,8 @@ input[type="button"].btn-block {
   .input-group-lg > .search__btn-container > .input-group-addon.btn,
   .input-group-lg > .input-group-btn > .input-group-addon.button,
   .input-group-lg > .search__btn-container > .input-group-addon.button,
+  .input-group-lg > .input-group-btn > .input-group-addon.button--full-width,
+  .input-group-lg > .search__btn-container > .input-group-addon.button--full-width,
   .input-group-lg > .input-group-btn > .input-group-addon.search__btn,
   .input-group-lg > .search__btn-container > .input-group-addon.search__btn {
   padding: 1.25rem 1.25rem;
@@ -3363,12 +3390,16 @@ input[type="button"].btn-block {
 .search__btn-container:first-child > .btn,
 .input-group-btn:first-child > .button,
 .search__btn-container:first-child > .button,
+.input-group-btn:first-child > .button--full-width,
+.search__btn-container:first-child > .button--full-width,
 .input-group-btn:first-child > .search__btn,
 .search__btn-container:first-child > .search__btn,
 .input-group-btn:first-child > .btn-group > .btn,
 .search__btn-container:first-child > .btn-group > .btn,
 .input-group-btn:first-child > .btn-group > .button,
 .search__btn-container:first-child > .btn-group > .button,
+.input-group-btn:first-child > .btn-group > .button--full-width,
+.search__btn-container:first-child > .btn-group > .button--full-width,
 .input-group-btn:first-child > .btn-group > .search__btn,
 .search__btn-container:first-child > .btn-group > .search__btn,
 .input-group-btn:first-child > .dropdown-toggle,
@@ -3377,12 +3408,16 @@ input[type="button"].btn-block {
 .search__btn-container:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .button:not(:last-child):not(.dropdown-toggle),
 .search__btn-container:last-child > .button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .button--full-width:not(:last-child):not(.dropdown-toggle),
+.search__btn-container:last-child > .button--full-width:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .search__btn:not(:last-child):not(.dropdown-toggle),
 .search__btn-container:last-child > .search__btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
 .search__btn-container:last-child > .btn-group:not(:last-child) > .btn,
 .input-group-btn:last-child > .btn-group:not(:last-child) > .button,
 .search__btn-container:last-child > .btn-group:not(:last-child) > .button,
+.input-group-btn:last-child > .btn-group:not(:last-child) > .button--full-width,
+.search__btn-container:last-child > .btn-group:not(:last-child) > .button--full-width,
 .input-group-btn:last-child > .btn-group:not(:last-child) > .search__btn,
 .search__btn-container:last-child > .btn-group:not(:last-child) > .search__btn {
   border-top-right-radius: 0; 
@@ -3399,12 +3434,16 @@ input[type="button"].btn-block {
 .search__btn-container:last-child > .btn,
 .input-group-btn:last-child > .button,
 .search__btn-container:last-child > .button,
+.input-group-btn:last-child > .button--full-width,
+.search__btn-container:last-child > .button--full-width,
 .input-group-btn:last-child > .search__btn,
 .search__btn-container:last-child > .search__btn,
 .input-group-btn:last-child > .btn-group > .btn,
 .search__btn-container:last-child > .btn-group > .btn,
 .input-group-btn:last-child > .btn-group > .button,
 .search__btn-container:last-child > .btn-group > .button,
+.input-group-btn:last-child > .btn-group > .button--full-width,
+.search__btn-container:last-child > .btn-group > .button--full-width,
 .input-group-btn:last-child > .btn-group > .search__btn,
 .search__btn-container:last-child > .btn-group > .search__btn,
 .input-group-btn:last-child > .dropdown-toggle,
@@ -3413,12 +3452,16 @@ input[type="button"].btn-block {
 .search__btn-container:first-child > .btn:not(:first-child),
 .input-group-btn:first-child > .button:not(:first-child),
 .search__btn-container:first-child > .button:not(:first-child),
+.input-group-btn:first-child > .button--full-width:not(:first-child),
+.search__btn-container:first-child > .button--full-width:not(:first-child),
 .input-group-btn:first-child > .search__btn:not(:first-child),
 .search__btn-container:first-child > .search__btn:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
 .search__btn-container:first-child > .btn-group:not(:first-child) > .btn,
 .input-group-btn:first-child > .btn-group:not(:first-child) > .button,
 .search__btn-container:first-child > .btn-group:not(:first-child) > .button,
+.input-group-btn:first-child > .btn-group:not(:first-child) > .button--full-width,
+.search__btn-container:first-child > .btn-group:not(:first-child) > .button--full-width,
 .input-group-btn:first-child > .btn-group:not(:first-child) > .search__btn,
 .search__btn-container:first-child > .btn-group:not(:first-child) > .search__btn {
   border-top-left-radius: 0; 
@@ -3434,21 +3477,21 @@ input[type="button"].btn-block {
   font-size: 0;
   white-space: nowrap;
 }
-.input-group-btn > .btn, .search__btn-container > .btn, .input-group-btn > .button, .search__btn-container > .button, .input-group-btn > .search__btn, .search__btn-container > .search__btn {
+.input-group-btn > .btn, .search__btn-container > .btn, .input-group-btn > .button, .search__btn-container > .button, .input-group-btn > .button--full-width, .search__btn-container > .button--full-width, .input-group-btn > .search__btn, .search__btn-container > .search__btn {
   position: relative;
 }
-.input-group-btn > .btn + .btn, .search__btn-container > .btn + .btn, .input-group-btn > .button + .btn, .search__btn-container > .button + .btn, .input-group-btn > .search__btn + .btn, .search__btn-container > .search__btn + .btn, .input-group-btn > .btn + .button, .search__btn-container > .btn + .button, .input-group-btn > .button + .button, .search__btn-container > .button + .button, .input-group-btn > .search__btn + .button, .search__btn-container > .search__btn + .button, .input-group-btn > .btn + .search__btn, .search__btn-container > .btn + .search__btn, .input-group-btn > .button + .search__btn, .search__btn-container > .button + .search__btn, .input-group-btn > .search__btn + .search__btn, .search__btn-container > .search__btn + .search__btn {
+.input-group-btn > .btn + .btn, .search__btn-container > .btn + .btn, .input-group-btn > .button + .btn, .search__btn-container > .button + .btn, .input-group-btn > .button--full-width + .btn, .search__btn-container > .button--full-width + .btn, .input-group-btn > .search__btn + .btn, .search__btn-container > .search__btn + .btn, .input-group-btn > .btn + .button, .search__btn-container > .btn + .button, .input-group-btn > .button + .button, .search__btn-container > .button + .button, .input-group-btn > .button--full-width + .button, .search__btn-container > .button--full-width + .button, .input-group-btn > .search__btn + .button, .search__btn-container > .search__btn + .button, .input-group-btn > .btn + .button--full-width, .search__btn-container > .btn + .button--full-width, .input-group-btn > .button + .button--full-width, .search__btn-container > .button + .button--full-width, .input-group-btn > .button--full-width + .button--full-width, .search__btn-container > .button--full-width + .button--full-width, .input-group-btn > .search__btn + .button--full-width, .search__btn-container > .search__btn + .button--full-width, .input-group-btn > .btn + .search__btn, .search__btn-container > .btn + .search__btn, .input-group-btn > .button + .search__btn, .search__btn-container > .button + .search__btn, .input-group-btn > .button--full-width + .search__btn, .search__btn-container > .button--full-width + .search__btn, .input-group-btn > .search__btn + .search__btn, .search__btn-container > .search__btn + .search__btn {
   margin-left: -1px;
 }
-.input-group-btn > .btn:focus, .search__btn-container > .btn:focus, .input-group-btn > .button:focus, .search__btn-container > .button:focus, .input-group-btn > .search__btn:focus, .search__btn-container > .search__btn:focus, .input-group-btn > .btn:active, .search__btn-container > .btn:active, .input-group-btn > .button:active, .search__btn-container > .button:active, .input-group-btn > .search__btn:active, .search__btn-container > .search__btn:active, .input-group-btn > .btn:hover, .search__btn-container > .btn:hover, .input-group-btn > .button:hover, .search__btn-container > .button:hover, .input-group-btn > .search__btn:hover, .search__btn-container > .search__btn:hover {
+.input-group-btn > .btn:focus, .search__btn-container > .btn:focus, .input-group-btn > .button:focus, .search__btn-container > .button:focus, .input-group-btn > .button--full-width:focus, .search__btn-container > .button--full-width:focus, .input-group-btn > .search__btn:focus, .search__btn-container > .search__btn:focus, .input-group-btn > .btn:active, .search__btn-container > .btn:active, .input-group-btn > .button:active, .search__btn-container > .button:active, .input-group-btn > .button--full-width:active, .search__btn-container > .button--full-width:active, .input-group-btn > .search__btn:active, .search__btn-container > .search__btn:active, .input-group-btn > .btn:hover, .search__btn-container > .btn:hover, .input-group-btn > .button:hover, .search__btn-container > .button:hover, .input-group-btn > .button--full-width:hover, .search__btn-container > .button--full-width:hover, .input-group-btn > .search__btn:hover, .search__btn-container > .search__btn:hover {
   z-index: 2;
 }
-.input-group-btn:first-child > .btn, .search__btn-container:first-child > .btn, .input-group-btn:first-child > .button, .search__btn-container:first-child > .button, .input-group-btn:first-child > .search__btn, .search__btn-container:first-child > .search__btn,
+.input-group-btn:first-child > .btn, .search__btn-container:first-child > .btn, .input-group-btn:first-child > .button, .search__btn-container:first-child > .button, .input-group-btn:first-child > .button--full-width, .search__btn-container:first-child > .button--full-width, .input-group-btn:first-child > .search__btn, .search__btn-container:first-child > .search__btn,
   .input-group-btn:first-child > .btn-group,
   .search__btn-container:first-child > .btn-group {
   margin-right: -1px;
 }
-.input-group-btn:last-child > .btn, .search__btn-container:last-child > .btn, .input-group-btn:last-child > .button, .search__btn-container:last-child > .button, .input-group-btn:last-child > .search__btn, .search__btn-container:last-child > .search__btn,
+.input-group-btn:last-child > .btn, .search__btn-container:last-child > .btn, .input-group-btn:last-child > .button, .search__btn-container:last-child > .button, .input-group-btn:last-child > .button--full-width, .search__btn-container:last-child > .button--full-width, .input-group-btn:last-child > .search__btn, .search__btn-container:last-child > .search__btn,
   .input-group-btn:last-child > .btn-group,
   .search__btn-container:last-child > .btn-group {
   z-index: 2;
@@ -4228,7 +4271,7 @@ input[type="button"].btn-block {
 .label:empty {
   display: none;
 }
-.btn .label, .button .label, .search__btn .label {
+.btn .label, .button .label, .button--full-width .label, .search__btn .label {
   position: relative;
   top: -1px;
 }
@@ -4961,11 +5004,11 @@ button.close {
 .modal-footer:after {
   clear: both;
 }
-.modal-footer .btn + .btn, .modal-footer .button + .btn, .modal-footer .search__btn + .btn, .modal-footer .btn + .button, .modal-footer .button + .button, .modal-footer .search__btn + .button, .modal-footer .btn + .search__btn, .modal-footer .button + .search__btn, .modal-footer .search__btn + .search__btn {
+.modal-footer .btn + .btn, .modal-footer .button + .btn, .modal-footer .button--full-width + .btn, .modal-footer .search__btn + .btn, .modal-footer .btn + .button, .modal-footer .button + .button, .modal-footer .button--full-width + .button, .modal-footer .search__btn + .button, .modal-footer .btn + .button--full-width, .modal-footer .button + .button--full-width, .modal-footer .button--full-width + .button--full-width, .modal-footer .search__btn + .button--full-width, .modal-footer .btn + .search__btn, .modal-footer .button + .search__btn, .modal-footer .button--full-width + .search__btn, .modal-footer .search__btn + .search__btn {
   margin-bottom: 0;
   margin-left: 5px;
 }
-.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .button + .btn, .modal-footer .btn-group .search__btn + .btn, .modal-footer .btn-group .btn + .button, .modal-footer .btn-group .button + .button, .modal-footer .btn-group .search__btn + .button, .modal-footer .btn-group .btn + .search__btn, .modal-footer .btn-group .button + .search__btn, .modal-footer .btn-group .search__btn + .search__btn {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .button + .btn, .modal-footer .btn-group .button--full-width + .btn, .modal-footer .btn-group .search__btn + .btn, .modal-footer .btn-group .btn + .button, .modal-footer .btn-group .button + .button, .modal-footer .btn-group .button--full-width + .button, .modal-footer .btn-group .search__btn + .button, .modal-footer .btn-group .btn + .button--full-width, .modal-footer .btn-group .button + .button--full-width, .modal-footer .btn-group .button--full-width + .button--full-width, .modal-footer .btn-group .search__btn + .button--full-width, .modal-footer .btn-group .btn + .search__btn, .modal-footer .btn-group .button + .search__btn, .modal-footer .btn-group .button--full-width + .search__btn, .modal-footer .btn-group .search__btn + .search__btn {
   margin-left: -1px;
 }
 .modal-footer .btn-block + .btn-block {
@@ -5393,7 +5436,7 @@ button.close {
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
 }
-.carousel-caption .btn, .carousel-caption .button, .carousel-caption .search__btn {
+.carousel-caption .btn, .carousel-caption .button, .carousel-caption .button--full-width, .carousel-caption .search__btn {
   text-shadow: none;
 }
 
@@ -6034,6 +6077,16 @@ a.bg-danger:focus, a.bg-danger:hover {
   border-bottom: solid .0625rem #ccc;
 }
 
+.mob-nav {
+  position: fixed;
+  top: 2.6875rem; 
+  left: 0;
+  width: 17.1875rem;
+  height: 100%;
+  padding: .625rem;
+  background-color: #ccc;
+}
+
 .account-form__register {
   display: none;
 }
@@ -6045,8 +6098,7 @@ a.bg-danger:focus, a.bg-danger:hover {
   text-align: center;
 }
 
-.button {
-  width: 100%;
+.button, .button--full-width {
   padding: 0;
   padding-top: 5px;
   font-family: sans-bold;
@@ -6055,7 +6107,7 @@ a.bg-danger:focus, a.bg-danger:hover {
   border: none;
   border-bottom: 3px #6c2401 solid;
 }
-.button:active {
+.button:active, .button--full-width:active {
   margin-top: 3px; 
   border-bottom: 0;
 }
@@ -6192,6 +6244,10 @@ a.bg-danger:focus, a.bg-danger:hover {
 }
 .search__btn:hover, .search__btn:focus, .search__btn:active {
   border-color: #ccc;
+}
+
+.button--full-width {
+  width: 100%;
 }
 
 .desk-nav--right {

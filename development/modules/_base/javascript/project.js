@@ -6,12 +6,23 @@ class PageVariables {
 		//Set up the common variables used by the various classes
 		this.doc = $(document);
 		this.window = $(window);
+		this.mobNavVisible = false;
 		//Page breakpoints as defined by Bootrap
 		this.breakPoints = {
 			'mobile': 554,
 			'tablet': 768,
 			'desktop': 992
 		};
+	}
+
+	setMobNavVisible(isVisible) {
+
+		this.mobNavVisible = isVisible;
+	}
+
+	getMobNavVisible() {
+
+		return this.mobNavVisible;
 	}
 }
 //TODO----------------------------------
@@ -75,6 +86,7 @@ class DeskNav {
 		//Set up class variables
 		this.doc = pageVariables.doc;
 		this.pageFunctions = pageFunctions;
+		pageFunctions.hideDropdownsEvent = this.hideDropdownsEvent;
 		this.navItemName = '.desk-nav__item';
 		this.navItems = $(this.navItemName);
 		this.navItemHeadings = $('.desk-nav__item__heading');
@@ -95,7 +107,6 @@ class DeskNav {
 		     
 		//Get the current state of the nav item
 		currentState = navItem.attr('data-state');
-		console.log(currentState);
 		//Close all open dropdowns
 		this.hideDropdownsEvent();
 
@@ -120,7 +131,6 @@ class DeskNav {
 		//Add click event to the page which closes any open drop downs if the click
 		//is outside of the dropdowns
 		this.doc.click((function (event) {
-			console.log($(event.target).closest(this.navItemName).length);
 			if (!$(event.target).closest(this.navItemName).length) {
 				this.hideDropdownsEvent();
 			}
@@ -143,6 +153,8 @@ class PageFunctions {
 		//TODO
 
 	}
+
+	hideDropdownsEvent() {}
 }
 class PageState {
 
@@ -207,6 +219,18 @@ class PageState {
 		return this.isAboveBreakpoint(this.breakPoints.desktop);
 	}
 
+	isMobNavShowing() {
+
+		const mobNavVisibile = this.pageVariables.getMobNavVisible();
+
+		return mobNavVisibile;
+	}
+
+	setHideDropdownEvent(dropDownEvent) {
+
+		this.setHideDropdownEvent = dropDownEvent;
+	}
+
 }
 $(document).ready(function () {
 
@@ -216,4 +240,31 @@ $(document).ready(function () {
 	const pageFunctions = new PageFunctions();
 	const deskNav = new DeskNav(pageVariables, pageFunctions);
 	const accountForm = new AccountForm();
+
+	class pat {
+
+		constructor() {}
+
+		setFunc(func) {
+			this.func = func;
+		}
+
+	}
+
+	class pat2 {
+
+		constructor(p) {
+			p.setFunc(this.func);
+		}
+
+		func() {
+			console.log('pat');
+		}
+
+	}
+
+	var p1 = new pat();
+	var p2 = new pat2(p1);
+
+	p1.func();
 });

@@ -1,0 +1,10 @@
+.mob-nav{
+	height: 100%;
+	width: $mob-nav-width;
+	//transform: translateX(-$mob-nav-width);
+	background-color: $gray-lighter;
+	padding: cRem(10);
+	position: fixed;
+	left: 0;
+	top: cRem(43)
+}

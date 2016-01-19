@@ -4,6 +4,7 @@ class DeskNav{
 		//Set up class variables
 		this.doc = pageVariables.doc;
 		this.pageFunctions = pageFunctions;
+		pageFunctions.hideDropdownsEvent = this.hideDropdownsEvent;
 		this.navItemName = '.desk-nav__item';
 		this.navItems = $(this.navItemName);
 		this.navItemHeadings = $('.desk-nav__item__heading');
@@ -23,7 +24,6 @@ class DeskNav{
 				const navItem = $(event.target).closest(this.navItemName),
 				//Get the current state of the nav item
 				currentState = navItem.attr('data-state');
-				console.log(currentState);
 				//Close all open dropdowns
 				this.hideDropdownsEvent();
 
@@ -50,7 +50,6 @@ class DeskNav{
 		//Add click event to the page which closes any open drop downs if the click
 		//is outside of the dropdowns
 		this.doc.click(function(event) {
-			console.log($(event.target).closest(this.navItemName).length);
 			if (!$(event.target).closest(this.navItemName).length){
 				this.hideDropdownsEvent();
 			}

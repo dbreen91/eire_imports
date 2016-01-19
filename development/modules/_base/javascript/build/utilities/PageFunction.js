@@ -15,4 +15,8 @@ class PageFunctions{
 		//TODO
 
 	}
+
+	hideDropdownsEvent(){
+		
+	}
 }

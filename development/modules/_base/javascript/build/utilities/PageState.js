@@ -6,6 +6,7 @@ class PageState {
 		this.pageWidth = this.window.width();
 		this.breakPoints = pageVariables.breakPoints;
 
+
 		this.update();
 
 	}
@@ -69,5 +70,19 @@ class PageState {
 		return this.isAboveBreakpoint(this.breakPoints.desktop);
 
 	}
+
+	isMobNavShowing(){
+
+		const mobNavVisibile = this.pageVariables.getMobNavVisible();
+
+		return mobNavVisibile;
+	}
+
+	setHideDropdownEvent(dropDownEvent){
+
+		this.setHideDropdownEvent = dropDownEvent;
+
+	}
+
 
 }
