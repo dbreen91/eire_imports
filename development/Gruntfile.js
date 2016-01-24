@@ -36,11 +36,14 @@
 
     jade:{
       compile:{
-        
+        options:{
+           pretty: true
+        },
+       
         files:[{
           src: "modules/blocks/*/jade/*.jade",
           expand: true,
-          pretty: true,
+          
           ext: '.html'  
         }]
       }

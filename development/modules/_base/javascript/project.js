@@ -27,17 +27,44 @@ class PageVariables {
 }
 //TODO----------------------------------
 class MobNav {
-	constructor(pageFunctions) {
+
+	constructor(pageVariables, pageFunctions) {
 
 		this.mobNav = $('#mob-nav');
 		this.mobNavBtn = $('#mob-nav-btn');
+		this.doc = pageVariables.doc;
 		this.pageFunctions = pageFunctions;
 
 		this.init();
 	}
 
-	init() {}
+	init() {
 
+		this.addUIEvents();
+	}
+
+	changeMobNavState() {
+
+		this.pageFunctions.toggleState(this.mobNav);
+	}
+
+	hideMobNavEvent() {
+
+		this.pageFunctions.changeState(this.mobNav, 'dormant');
+	}
+
+	addUIEvents() {
+
+		this.mobNavBtn.click((function () {
+			this.changeMobNavState();
+		}).bind(this));
+
+		this.doc.click((function (event) {
+			if (!$(event.target).closest(this.mobNav).length && !$(event.target).closest(this.mobNavBtn).length) {
+				this.hideMobNavEvent();
+			}
+		}).bind(this));
+	}
 }
 class AccountForm {
 
@@ -104,7 +131,8 @@ class DeskNav {
 		//Find the nav item element
 		const navItem = $(event.target).closest(this.navItemName),
 		     
-		//Get the current state of the nav item
+		//Get the current state of the nav item before the hideDropdown event is called. This is to ensure that
+		//when a navitem is clicked any open dropdowns other then the one belonging to the navItem being clicked are closed
 		currentState = this.pageFunctions.getState(navItem);
 		//Close all open dropdowns
 		this.hideDropdownsEvent();
@@ -152,9 +180,15 @@ class PageFunctions {
 
 		const currentState = this.getState(element);
 
-		if (currentState === 'dormant') {
+		console.log(currentState);
+		console.log(currentState === 'dormant');
+		console.log(currentState == 'dormant');
+
+		if (currentState == 'dormant') {
+			console.log('heere');
 			this.changeState(element, 'active');
 		} else {
+			console.log('heerddde');
 			this.changeState(element, 'dormant');
 		}
 	}
@@ -251,4 +285,5 @@ $(document).ready(function () {
 	const pageFunctions = new PageFunctions();
 	const deskNav = new DeskNav(pageVariables, pageFunctions);
 	const accountForm = new AccountForm();
+	const mobNav = new MobNav(pageVariables, pageFunctions);
 });

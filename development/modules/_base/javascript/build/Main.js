@@ -6,6 +6,7 @@ $(document).ready(function(){
 	const pageFunctions = new PageFunctions();
 	const deskNav = new DeskNav(pageVariables, pageFunctions);
 	const accountForm = new AccountForm();
+	const mobNav = new MobNav(pageVariables, pageFunctions);
 
 	
 });

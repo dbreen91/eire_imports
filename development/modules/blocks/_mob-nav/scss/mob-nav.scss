@@ -2,9 +2,13 @@
 	height: 100%;
 	width: $mob-nav-width;
 	//transform: translateX(-$mob-nav-width);
-	background-color: $gray-lighter;
+	background-color: $gray-lightest;
 	padding: cRem(10);
 	position: fixed;
-	left: 0;
+	left: -$mob-nav-width;
 	top: cRem(43)
+}
+
+.mob-nav[data-state='active']{
+	left: 0;
 }

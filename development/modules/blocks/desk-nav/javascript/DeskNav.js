@@ -11,7 +11,6 @@ class DeskNav{
 		//Initialize methods
 		this.init();
 	}
-	
 
 	init(){
 		//Add click events
@@ -22,7 +21,8 @@ class DeskNav{
 
 				//Find the nav item element 
 				const navItem = $(event.target).closest(this.navItemName),
-				//Get the current state of the nav item
+				//Get the current state of the nav item before the hideDropdown event is called. This is to ensure that
+				//when a navitem is clicked any open dropdowns other then the one belonging to the navItem being clicked are closed
 				currentState = this.pageFunctions.getState(navItem);
 				//Close all open dropdowns
 				this.hideDropdownsEvent();

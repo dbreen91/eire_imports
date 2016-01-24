@@ -15,9 +15,15 @@ class PageFunctions{
 
 		const currentState = this.getState(element);
 
-		if(currentState === 'dormant'){
+		console.log(currentState)
+		console.log(currentState === 'dormant');
+		console.log(currentState == 'dormant');
+
+		if(currentState == 'dormant'){
+			console.log('heere');
 			this.changeState(element, 'active');
 		}else{
+			console.log('heerddde');
 			this.changeState(element, 'dormant');
 		}
 
