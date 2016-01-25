@@ -6079,12 +6079,15 @@ a.bg-danger:focus, a.bg-danger:hover {
 
 .mob-nav {
   position: fixed;
-  top: 2.6875rem; 
+  top: 2.6875rem;
   left: -17.1875rem;
   width: 17.1875rem;
   height: 100%;
   padding: .625rem;
   background-color: #eee;
+  -webkit-transition: all .5s;
+       -o-transition: all .5s;
+          transition: all .5s;
 }
 
 .mob-nav[data-state='active'] {

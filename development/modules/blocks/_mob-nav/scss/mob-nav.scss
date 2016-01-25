@@ -6,7 +6,8 @@
 	padding: cRem(10);
 	position: fixed;
 	left: -$mob-nav-width;
-	top: cRem(43)
+	top: cRem(43);
+	transition: all .5s;
 }
 
 .mob-nav[data-state='active']{
